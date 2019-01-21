@@ -1,0 +1,112 @@
+
+1. Реалізувати добавлення і вилучення книг, авторів, видавництв;
+
+INSERT INTO my_schema.author
+    (name, citizenship, birth_year, death_year)
+       VALUES ( 'Kolody Vitaly', 'Ukraine', 1939, 2016),
+		  ( 'Oscar Wilde', 'Ireland', 1854, 1900);
+
+
+INSERT INTO my_schema.book
+    (book_name, genre, pages, year_of_publication, date_of_receipt, author_id, publisher_id)
+       VALUES ( 'Fantastic stories for good night', 'story', 240, 2016, '2016-09-15', 1, 4)
+
+
+INSERT INTO my_schema.publisher
+    (publisher_name, contact_person_id, address_id)
+       VALUES ( 'Bookrek', 1, 4)
+
+
+Delete data from table
+
+DELETE FROM my_schema.author
+WHERE my_schema.author.name = 'Kolody Vitaly';
+
+DELETE FROM my_schema.book
+WHERE my_schema.book.book_name = 'Fantastic stories for good night';
+
+DELETE FROM my_schema.publisher
+WHERE my_schema.publisher.publisher_name = 'Bookrek';
+
+Update
+
+ UPDATE my_schema.author
+   SET birth_year = '1954-01-23'
+WHERE
+  ID = 1
+
+2. Вивід усіх книг, авторів, видавництв;
+
+Select all data from tables
+
+SELECT * FROM my_schema.author
+SELECT * FROM my_schema.publisher
+SELECT * FROM my_schema.book
+
+
+Select exact values
+SELECT  name, citizenship FROM my_schema.author
+
+SELECT * FROM my_schema.book
+where id=1
+
+3. Пошук по частині назві книги, видавництва чи прізвища автора;
+
+Select where like
+
+'abc' LIKE 'abc'    true
+'abc' LIKE 'a%'     true
+'abc' LIKE '_b_'    true
+'abc' LIKE 'c'      false
+
+
+SELECT * FROM my_schema.book
+where book_name like '%antastic%'
+
+
+4. Вивід книг заданого автора; заданого видавництва;
+
+Select by condition from onether table.
+
+
+SELECT book.book_name
+FROM my_schema.book
+where author_id=
+(SELECT id
+FROM my_schema.author
+where name= 'Ian Whybrow')
+
+
+SELECT book.book_name
+FROM my_schema.book
+where book.publisher_id=
+(SELECT publisher.id
+FROM my_schema.publisher
+where publisher.publisher_name= 'Bookrek')
+
+
+The INNER JOIN
+The LEFT OUTER JOIN
+The RIGHT OUTER JOIN
+The FULL OUTER JOIN
+
+
+SELECT * FROM my_schema.book INNER JOIN my_schema.author
+        ON my_schema.book.author_id = my_schema.author.id;
+		
+
+
+5. Передбачити можливість сортування
+
+Order by
+
+
+FROM
+my_schema.book
+ORDER BY
+ genre ASC,
+year_of_publication DESC;
+
+
+
+
