@@ -5,12 +5,12 @@
 -- Dumped from database version 10.6
 -- Dumped by pg_dump version 10.6
 
--- Started on 2019-02-04 23:06:55 EET
+-- Started on 2019-02-04 23:20:34 EET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'SQL_ASCII';
+SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
@@ -33,7 +33,7 @@ ALTER DATABASE book_library OWNER TO postgres;
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'SQL_ASCII';
+SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
@@ -333,7 +333,6 @@ INSERT INTO my_schema.book (id, book_name, genre, pages, author_id, publisher_id
 INSERT INTO my_schema.book (id, book_name, genre, pages, author_id, publisher_id, date_of_receipt, year_of_publication) VALUES (14, 'God Is Always Hiring: 50 Lessons for Finding Fulfilling Work', 'motivational', 264, 6, 6, '2018-03-28 00:00:00', 2018);
 INSERT INTO my_schema.book (id, book_name, genre, pages, author_id, publisher_id, date_of_receipt, year_of_publication) VALUES (15, 'Twój dziennik. 12 nowych lekcji i myśli na każdy dzień', 'motivational', 242, 6, 6, '2018-10-15 00:00:00', 2018);
 INSERT INTO my_schema.book (id, book_name, genre, pages, author_id, publisher_id, date_of_receipt, year_of_publication) VALUES (16, 'Dear John', 'novel', 319, 7, 7, '2013-05-28 00:00:00', 2009);
-INSERT INTO my_schema.book (id, book_name, genre, pages, author_id, publisher_id, date_of_receipt, year_of_publication) VALUES (18, 'Quiet', 'motivational', 368, 8, 8, '2018-05-28 00:00:00', 2016);
 
 
 --
@@ -503,7 +502,7 @@ ALTER TABLE ONLY my_schema.book
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2019-02-04 23:06:55 EET
+-- Completed on 2019-02-04 23:20:35 EET
 
 --
 -- PostgreSQL database dump complete
